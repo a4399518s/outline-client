@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ enum RoutingServiceStatusCode {
   UNSUPPORTED_ROUTING_TABLE = 2,
 }
 
-// Communicates with the Outline routing daemon via a Unix socket.
+// Communicates with the Super Net routing daemon via a Unix socket.
 //
 // A minimal life-cycle is supported:
 //  - CONFIGURE_ROUTING is *always* the first message sent on the pipe.
@@ -309,7 +309,7 @@ async function installLinuxRoutingServices(): Promise<void> {
   }
   console.log(`all service installation files copied to ${tmp} successfully`);
 
-  // At this time, the user running Outline (who is not root) could replace these installation
+  // At this time, the user running Super Net (who is not root) could replace these installation
   // files in "/tmp/xxx" folder with any arbitrary scripts (because "/tmp/xxx" folder and its
   // contents are writable by this user). Our system will then run it using root and cause a
   // potential security breach. Therefore we need to make sure the files are the ones provided
@@ -332,7 +332,7 @@ async function installLinuxRoutingServices(): Promise<void> {
 }
 
 export async function installRoutingServices(): Promise<void> {
-  console.info('installing outline routing service...');
+  console.info('installing Super Net routing service...');
   if (isWindows) {
     await installWindowsRoutingServices();
   } else if (isLinux) {
@@ -340,7 +340,7 @@ export async function installRoutingServices(): Promise<void> {
   } else {
     throw new Error('unsupported os');
   }
-  console.info('outline routing service installed successfully');
+  console.info('Super Net routing service installed successfully');
 }
 
 //#endregion routing service installation

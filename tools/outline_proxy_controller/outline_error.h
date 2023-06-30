@@ -1,4 +1,4 @@
-// Copyright 2022 The Outline Authors
+// Copyright 2022 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
 
 #include <system_error>
 
-namespace outline {
+namespace Super Net {
 
 /**
  * @brief The standard error code constants used by outline.
@@ -42,9 +42,9 @@ enum class ErrorCode {
 };
 
 /**
- * @brief Get a singleton instance representing outline error category.
+ * @brief Get a singleton instance representing Super Net error category.
  * 
- * @return const std::error_category& The outline error category.
+ * @return const std::error_category& The Super Net error category.
  */
 const std::error_category& OutlineErrorCategory();
 

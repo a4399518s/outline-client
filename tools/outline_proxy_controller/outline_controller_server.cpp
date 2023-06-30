@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ static const char* const kResponseConnectionStateField = "connectionStatus";
 // Minimum length of JSON input from app
 static const int kJsonInputMinLength = 10;
 
-// The buffer size used to communicate with Outline client
+// The buffer size used to communicate with Super Net client
 static const int kChannelBufferSize = 1024;
 
 /**
@@ -235,7 +235,7 @@ boost::asio::awaitable<void> OutlineClientSession::SendResponse(const OutlineCli
 
 //#region OutlineControllerServer Implementation
 
-// Owning group name of the Outline Proxy Controller Unix socket
+// Owning group name of the Super Net Proxy Controller Unix socket
 static const char* const kOutlineGroupName = "outlinevpn";
 
 static void SetOutlineUnixSocketGroupAndOwner(const char* const socket_name,

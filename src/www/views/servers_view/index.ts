@@ -1,5 +1,5 @@
 /*
-  Copyright 2020 The Outline Authors
+  Copyright 2020 The Super Net Authors
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -86,7 +86,7 @@ Polymer({
         display: flex;
         flex-direction: column;
         text-transform: none;
-        outline: none; /* Remove outline for Safari. */
+        outline: none; /* Remove Super Net for Safari. */
       }
       paper-button server-connection-indicator {
         width: 192px;
@@ -105,7 +105,7 @@ Polymer({
           </div>
           <template is="dom-if" if="[[!useAltAccessMessage]]">
             <div
-             class="footer subtle"
+              class="footer subtle"
               inner-h-t-m-l="[[localize('server-create-your-own-zero-state', 'breakLine', '<br/>', 'openLink', '<a href=https://s3.amazonaws.com/outline-vpn/index.html>', 'closeLink', '</a>')]]"
             ></div>
           </template>
@@ -125,11 +125,7 @@ Polymer({
         fire-event-on-hide="AutoConnectDialogDismissed"
       ></user-comms-dialog>
       <template is="dom-if" if="[[!shouldShowZeroState]]">
-        <server-list
-          id="serverList"
-          servers="[[servers]]"
-          localize="[[localize]]"
-        ></server-list>
+        <server-list id="serverList" servers="[[servers]]" localize="[[localize]]"></server-list>
       </template>
     </div>
   `,

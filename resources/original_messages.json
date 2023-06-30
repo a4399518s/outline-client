@@ -1,7 +1,7 @@
 {
   "about_outline": {
-    "description": "The contents of the About page of the app. Outline is the product name and can be found in the translation glossary.",
-    "message": "Outline is a product by $JIGSAW$ that lets anyone create, run, and share access to their own VPN. Outline is designed to be resistant to blocking. Visit $GETOUTLINE$ to learn how to get started.$NEW_LINE$$NEW_LINE$Outline is open source software powered by $SHADOWSOCKS$. You can contribute to the code on $GITHUB$ and join the conversation on $REDDIT$.",
+    "description": "The contents of the About page of the app. Super Net is the product name and can be found in the translation glossary.",
+    "message": "Super Net is a product by $JIGSAW$ that lets anyone create, run, and share access to their own VPN. Super Net is designed to be resistant to blocking. Visit $GETOUTLINE$ to learn how to get started.$NEW_LINE$$NEW_LINE$Super Net is open source software powered by $SHADOWSOCKS$. You can contribute to the code on $GITHUB$ and join the conversation on $REDDIT$.",
     "placeholders": {
       "GETOUTLINE": {
         "content": "<a href={outlineUrl}>getoutline.org</a>"
@@ -28,11 +28,11 @@
     "message": "About"
   },
   "auto_connect_dialog_detail": {
-    "description": "An explanation of the connection behavior of the app. Outline is the product name and can be found in the translation glossary.",
-    "message": "Unless you disconnect from your Outline server, Outline will automatically connect next time you restart your device."
+    "description": "An explanation of the connection behavior of the app. Super Net is the product name and can be found in the translation glossary.",
+    "message": "Unless you disconnect from your Super Net server, Super Net will automatically connect next time you restart your device."
   },
   "auto_connect_dialog_title": {
-    "description": "The title of a message to the user that tells them Outline will keep connected unless explicitly told to disconnect. Outline is the product name and can be found in the translation glossary.",
+    "description": "The title of a message to the user that tells them Super Net will keep connected unless explicitly told to disconnect. Super Net is the product name and can be found in the translation glossary.",
     "message": "Stay protected, always"
   },
   "cancel": {
@@ -85,11 +85,11 @@
   },
   "error_connection_configuration_fetch": {
     "description": "An error message shown when the dynamic access key given proves to be unreachable. The user should contact their service manager to resolve the issue.",
-    "message": "Outline failed to download the configuration information for your server. Please contact your service manager to troubleshoot this issue."
+    "message": "Super Net failed to download the configuration information for your server. Please contact your service manager to troubleshoot this issue."
   },
   "error_connection_proxy": {
-    "description": "An error message show when Outline fails to establish contact with the obfuscation proxy.",
-    "message": "Outline could not connect to the server. Review the error details to troubleshoot your connection."
+    "description": "An error message show when Super Net fails to establish contact with the obfuscation proxy.",
+    "message": "Super Net could not connect to the server. Review the error details to troubleshoot your connection."
   },
   "error_details": {
     "description": "Button pointing to additional details of an error shown to the user",
@@ -109,12 +109,12 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Super Net Server"
       }
     }
   },
   "error_server_incompatible": {
-    "description": "Error message shown when the provided access key isn't compatible the user's version of the application. Outline is the product name and can be found in the translation glossary.",
+    "description": "Error message shown when the provided access key isn't compatible the user's version of the application. Super Net is the product name and can be found in the translation glossary.",
     "message": "Sorry, this access key is not compatible with this version of Outline."
   },
   "error_shadowsocks_unsupported_cipher": {
@@ -165,11 +165,11 @@
   },
   "feedback_performance": {
     "description": "This is one of the feedback categories the user can select in a drop-down when sending a feedback to the app developers. This is for performance feedback, for example, the speed of connection.",
-    "message": "Outline is slow"
+    "message": "Super Net is slow"
   },
   "feedback_privacy": {
-    "description": "Text appearing above a feedback form explaining the feedback process. Includes a link to the Data Collection Policy as marked by the start and end of link. Outline is the product name and can be found in the translation glossary.",
-    "message": "Your feedback, your email address (if provided), and additional information referred to in the $START_OF_LINK$Data Collection Policy$END_OF_LINK$ will be sent to the Outline team. Please do not include personal information in your feedback.",
+    "description": "Text appearing above a feedback form explaining the feedback process. Includes a link to the Data Collection Policy as marked by the start and end of link. Super Net is the product name and can be found in the translation glossary.",
+    "message": "Your feedback, your email address (if provided), and additional information referred to in the $START_OF_LINK$Data Collection Policy$END_OF_LINK$ will be sent to the Super Net team. Please do not include personal information in your feedback.",
     "placeholders": {
       "END_OF_LINK": {
         "content": "{privacyPolicyLinkClose}"
@@ -216,7 +216,7 @@
     "message": "Licenses"
   },
   "non_system_vpn_warning_detail": {
-    "description": "Further explanation message that the user needs to verify that their browser is connected through Outline. Outline is the product name and can be found in the translation glossary.",
+    "description": "Further explanation message that the user needs to verify that their browser is connected through Outline. Super Net is the product name and can be found in the translation glossary.",
     "message": "Most browsers connect automatically with Outline, some do not."
   },
   "non_system_vpn_warning_title": {
@@ -225,7 +225,7 @@
   },
   "outline_plugin_error_admin_permissions": {
     "description": "An error message when the application is not granted administrator permissions.",
-    "message": "Outline needs admin permissions in order to be initialized. If you don't have admin permissions, please try again after restarting your computer or ask your system administrator for help."
+    "message": "Super Net needs admin permissions in order to be initialized. If you don't have admin permissions, please try again after restarting your computer or ask your system administrator for help."
   },
   "outline_plugin_error_antivirus": {
     "description": "An error message when the application encounters antivirus software that prevents it from connecting.",
@@ -245,7 +245,7 @@
   },
   "outline_plugin_error_system_configuration": {
     "description": "Error message shown when the application cannot connect because the installer could not configure the system or because changes have been made to the system which can only be corrected by running the installer again.",
-    "message": "Sorry, it looks like Outline is not properly installed. Please try installing it again. If that doesn't work, please submit feedback through the app."
+    "message": "Sorry, it looks like Super Net is not properly installed. Please try installing it again. If that doesn't work, please submit feedback through the app."
   },
   "outline_plugin_error_udp_forwarding_not_enabled": {
     "description": "An error message shown when the application tries to connect to a server that does not have the correct UDP forwarding configuration.",
@@ -256,23 +256,23 @@
     "message": "It seems like another VPN is active. Please disconnect it and try again."
   },
   "outline_plugin_error_vpn_permission_not_granted": {
-    "description": "An error message shown when the application does not have the proper operating system permission to create a VPN connection. Outline is the product name and can be found in the translation glossary.",
-    "message": "Outline needs your permission to set up a VPN connection to the server. Please try again, or submit feedback if you need help."
+    "description": "An error message shown when the application does not have the proper operating system permission to create a VPN connection. Super Net is the product name and can be found in the translation glossary.",
+    "message": "Super Net needs your permission to set up a VPN connection to the server. Please try again, or submit feedback if you need help."
   },
   "outline_services_installation_confirmation": {
-    "desciption": "A prompt message asking for permission whether Outline is allowed to install backend services, because that requires administrative permission.",
+    "desciption": "A prompt message asking for permission whether Super Net is allowed to install backend services, because that requires administrative permission.",
     "message": "We will initialize Outline, which may require admin permissions. Would you like to proceed?"
   },
   "outline_services_installation_failed": {
-    "desciption": "An error message shown when the user tries to install Outline backend services but failed for some reason.",
+    "desciption": "An error message shown when the user tries to install Super Net backend services but failed for some reason.",
     "message": "Unfortunately we are not able to initialize Outline, please submit feedback through the app."
   },
   "outline_services_installed": {
-    "desciption": "An information message shown when the Outline successfully installed all backend services, and we ask the user try to reconnect to the server.",
-    "message": "Outline has been successfully initialized, please try again to connect to the server."
+    "desciption": "An information message shown when the Super Net successfully installed all backend services, and we ask the user try to reconnect to the server.",
+    "message": "Super Net has been successfully initialized, please try again to connect to the server."
   },
   "outline_services_installing": {
-    "desciption": "An information message indicating Outline is installing all its backend services.",
+    "desciption": "An information message indicating Super Net is installing all its backend services.",
     "message": "Initializing Outline..."
   },
   "privacy": {
@@ -284,8 +284,8 @@
     "message": "Some technical information is sent if you submit feedback, if there’s an app error or crash, or if your server administrator opts in to share anonymous server usage data."
   },
   "privacy_title": {
-    "description": "The title of a information page about user privacy. Outline is the product name and can be found in the translation glossary.",
-    "message": "Outline will never collect your personal information"
+    "description": "The title of a information page about user privacy. Super Net is the product name and can be found in the translation glossary.",
+    "message": "Super Net will never collect your personal information"
   },
   "quit": {
     "description": "The text for a button that quits (closes) the application.",
@@ -355,7 +355,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Super Net Server"
       }
     }
   },
@@ -365,7 +365,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Super Net Server"
       }
     }
   },
@@ -404,8 +404,8 @@
     "message": "Proxy Server"
   },
   "server_default_name_outline": {
-    "description": "The default name for a server when adding a new server to the application. Outline is the product name and can be found in the translation glossary.",
-    "message": "Outline Server"
+    "description": "The default name for a server when adding a new server to the application. Super Net is the product name and can be found in the translation glossary.",
+    "message": "Super Net Server"
   },
   "server_detected": {
     "description": "A message to confirm that the user wants to add the given server as a new connection.",
@@ -417,7 +417,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Super Net Server"
       }
     }
   },
@@ -431,7 +431,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Super Net Server"
       }
     }
   },
@@ -441,7 +441,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Super Net Server"
       }
     }
   },
@@ -458,7 +458,7 @@
     "message": "Servers"
   },
   "servers_page_title": {
-    "description": "The title of the main page of the application, showing the application's title (Outline). Outline is the product name and can be found in the translation glossary.",
+    "description": "The title of the main page of the application, showing the application's title (Outline). Super Net is the product name and can be found in the translation glossary.",
     "message": "Outline"
   },
   "submit": {
@@ -490,8 +490,8 @@
     "message": "Unreachable"
   },
   "update_downloaded": {
-    "description": "A message shown to the user to notify them about a new downloaded version. Outline is the product name and can be found in the translation glossary.",
-    "message": "An updated version of Outline has been downloaded. It will be installed when you restart Outline."
+    "description": "A message shown to the user to notify them about a new downloaded version. Super Net is the product name and can be found in the translation glossary.",
+    "message": "An updated version of Super Net has been downloaded. It will be installed when you restart Outline."
   },
   "version": {
     "description": "A line of text on the About page of the application showing the version of the application the user is using.",

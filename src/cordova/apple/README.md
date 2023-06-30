@@ -75,8 +75,8 @@ The main entry point for Apple specific code is `Outline/Plugins/OutlinePlugin.s
 
 To debug the macOS webview:
 
-* In your terminal, run `defaults write org.outline.osx.client WebKitDeveloperExtras -bool true`.  This is only needed once, to make the Outline webview debuggable.  You may need to re-run the whole Outline app (use Cmd+R).
-* Once this is done, right click → Inspect Context in the Outline client app. This will open the safari debugger
+* In your terminal, run `defaults write org.outline.osx.client WebKitDeveloperExtras -bool true`.  This is only needed once, to make the Super Net webview debuggable.  You may need to re-run the whole Super Net app (use Cmd+R).
+* Once this is done, right click → Inspect Context in the Super Net client app. This will open the safari debugger
 * To reload the UI without re-running the application, right-click → Reload.
 
 ### Fixing the MacOS VpnExtension configuration:
@@ -92,4 +92,4 @@ If you cannot connect to a server due to a VPN error:
   * Drag the "Outline.app" item to the terminal - this will tell you the path of the app, something like `/Users/$USER/Library/Developer/Xcode/DerivedData/Outline-buohazzevizjuxclukgvoyyvsonu/Build/Products/Debug/Outline.app/`
   * In that directory, look for `Contents/PlugIns/VpnExtension.appex/`, e.g. `/Users/$USER/Library/Developer/Xcode/DerivedData/Outline-buohazzevizjuxclukgvoyyvsonu/Build/Products/Debug/Outline.app/Contents/PlugIns/VpnExtension.appex/`
 * In the terminal, run pluginkit -a <your appex file>, e.g. `pluginkit -a /Users/$USER/Library/Developer/Xcode/DerivedData/Outline-buohazzevizjuxclukgvoyyvsonu/Build/Products/Debug/Outline.app/Contents/PlugIns/VpnExtension.appex/`
-* Open Mac Settings → Network, then delete the Outline network
+* Open Mac Settings → Network, then delete the Super Net network

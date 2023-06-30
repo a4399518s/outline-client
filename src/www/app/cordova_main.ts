@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ class CordovaClipboard extends AbstractClipboard {
   }
 }
 
-// Helper function to call the Outline Cordova plugin.
+// Helper function to call the Super Net Cordova plugin.
 function pluginExec<T>(cmd: string, ...args: unknown[]): Promise<T> {
   return new Promise<T>((resolve, reject) => {
     cordova.exec(resolve, reject, OUTLINE_PLUGIN_NAME, cmd, args);

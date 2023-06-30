@@ -20,7 +20,7 @@ What behavior did you expect?
 If applicable, add screenshots to help explain your problem.
 
 **Client System (please complete the following information):**
- - Outline Client Version [e.g. iOS 1.3.1]
+ - Super Net Client Version [e.g. iOS 1.3.1]
  - Your Operating System: [e.g. iOS 14.2, Windows 10]
 
 **Submit Feedback**

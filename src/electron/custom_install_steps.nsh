@@ -1,4 +1,4 @@
-; Copyright 2018 The Outline Authors
+; Copyright 2018 The Super Net Authors
 ;
 ; Licensed under the Apache License, Version 2.0 (the "License");
 ; you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ ${StrRep}
   UserInfo::GetAccountType
   Pop $0
   StrCmp $0 "Admin" isadmin
-  MessageBox MB_OK "Sorry, Outline requires administrator permissions."
+  MessageBox MB_OK "Sorry, Super Net requires administrator permissions."
   Quit
 
   isadmin:
@@ -163,7 +163,7 @@ ${StrRep}
 
 ; TODO: Remove the TAP device on uninstall. This is impossible to implement safely
 ;       with the bundled tapinstall.exe because it can only remove *all* devices
-;       having hwid tap0901 and these may include non-Outline devices.
+;       having hwid tap0901 and these may include non-Super Net devices.
 !macro customUnInstall
   nsExec::Exec "net stop OutlineService"
   nsExec::Exec "sc delete OutlineService"

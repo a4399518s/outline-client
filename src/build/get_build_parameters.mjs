@@ -1,4 +1,4 @@
-// Copyright 2022 The Outline Authors
+// Copyright 2022 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -37,13 +37,13 @@ export function getBuildParameters(cliArguments) {
 
   if (platform && !VALID_PLATFORMS.includes(platform)) {
     throw new TypeError(
-      `Platform "${platform}" is not a valid target for Outline Client. Must be one of ${VALID_PLATFORMS.join(', ')}`
+      `Platform "${platform}" is not a valid target for Super Net Client. Must be one of ${VALID_PLATFORMS.join(', ')}`
     );
   }
 
   if (buildMode && !VALID_BUILD_MODES.includes(buildMode)) {
     throw new TypeError(
-      `Build mode "${buildMode}" is not a valid build mode for Outline Client. Must be one of ${VALID_BUILD_MODES.join(
+      `Build mode "${buildMode}" is not a valid build mode for Super Net Client. Must be one of ${VALID_BUILD_MODES.join(
         ', '
       )}`
     );

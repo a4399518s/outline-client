@@ -1,4 +1,4 @@
-Build the Outline Android app with Docker. No other tools are needed.
+Build the Super Net Android app with Docker. No other tools are needed.
 
 This approach is based on [microcontainers](https://www.iron.io/microcontainers-tiny-portable-containers/), using [mhart's Node.js images](https://github.com/mhart/alpine-node).
 

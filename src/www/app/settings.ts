@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ interface StorageSettings {
 export enum SettingsKey {
   VPN_WARNING_DISMISSED = 'vpn-warning-dismissed',
   AUTO_CONNECT_DIALOG_DISMISSED = 'auto-connect-dialog-dismissed',
-  PRIVACY_ACK = 'privacy-ack'
+  PRIVACY_ACK = 'privacy-ack',
 }
 
 // Persistent storage for user settings that supports a limited set of keys.
@@ -30,8 +30,9 @@ export class Settings {
   private readonly settings = new Map<string, string>();
 
   constructor(
-      private storage: Storage = window.localStorage,
-      private validKeys: string[] = Object.values(SettingsKey)) {
+    private storage: Storage = window.localStorage,
+    private validKeys: string[] = Object.values(SettingsKey)
+  ) {
     this.loadSettings();
   }
 
@@ -79,4 +80,3 @@ export class Settings {
     this.storage.setItem(Settings.STORAGE_KEY, storageSettingsJson);
   }
 }
-

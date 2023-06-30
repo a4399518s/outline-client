@@ -1,4 +1,4 @@
-// Copyright 2020 The Outline Authors
+// Copyright 2020 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -400,7 +400,7 @@ function main() {
   // Some APIs can only be used after this event occurs.
   app.on('ready', async () => {
     // To clearly identify app restarts in Sentry.
-    console.info('Outline is starting');
+    console.info('Super Net is starting');
 
     setupMenu();
     setupTray();

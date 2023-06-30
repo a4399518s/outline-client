@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 #ifndef SRC_LOGGER_H_
 #define SRC_LOGGER_H_
 
-namespace outline {
+namespace Super Net {
 
 // Standard log levels, ascending order of specificity.
 enum log_level_t { SILLY, DEBUG, VERBOSE, INFO, WARN, ERROR, ABORT };

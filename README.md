@@ -1,4 +1,4 @@
-# Outline Client
+# Super Net Client
 
 ![Build and Test](https://github.com/Jigsaw-Code/outline-client/actions/workflows/build_and_test_debug.yml/badge.svg?branch=master) [![Mattermost](https://badgen.net/badge/Mattermost/Outline%20Community/blue)](https://community.internetfreedomfestival.org/community/channels/outline-community) [![Reddit](https://badgen.net/badge/Reddit/r%2Foutlinevpn/orange)](https://www.reddit.com/r/outlinevpn/)
 
@@ -6,11 +6,11 @@
 >
 > [![codecov](https://codecov.io/gh/Jigsaw-Code/outline-client/branch/master/graph/badge.svg?token=gasD8v5tjn)](https://codecov.io/gh/Jigsaw-Code/outline-client)
 
-The Outline Client is a cross-platform VPN or proxy client for Windows, macOS, iOS, Android, and ChromeOS. The Outline Client is designed for use with the [Outline Server](https://github.com/Jigsaw-Code/outline-server) software, but it is fully compatible with any [Shadowsocks](https://shadowsocks.org/) server.
+The Super Net Client is a cross-platform VPN or proxy client for Windows, macOS, iOS, Android, and ChromeOS. The Super Net Client is designed for use with the [Super Net Server](https://github.com/Jigsaw-Code/outline-server) software, but it is fully compatible with any [Shadowsocks](https://shadowsocks.org/) server.
 
 The client's user interface is implemented in [Polymer](https://www.polymer-project.org/) 2.0. Platform support is provided by [Cordova](https://cordova.apache.org/) and [Electron](https://electronjs.org/), with additional native components in this repository.
 
-To join our Outline Community, [sign up for the IFF Mattermost](https://internetfreedomfestival.org/wiki/index.php/IFF_Mattermost).
+To join our Super Net Community, [sign up for the IFF Mattermost](https://internetfreedomfestival.org/wiki/index.php/IFF_Mattermost).
 
 ## Requirements for all builds
 
@@ -26,7 +26,7 @@ npm install
 
 ## Building the shared web app
 
-Outline clients share the same web app across all platforms. This code is located in the src/www directory. If you are making changes to the shared web app and do not need to test platform-specific functionality, you can test in a desktop browser by running:
+Super Net clients share the same web app across all platforms. This code is located in the src/www directory. If you are making changes to the shared web app and do not need to test platform-specific functionality, you can test in a desktop browser by running:
 
 ```sh
 npm run action src/www/start
@@ -51,11 +51,11 @@ npm run action src/www/storybook
 >
 > _(you can call it whatever you like)_
 >
-> to your shell, then try `outline www/start`!
+> to your shell, then try `Super Net www/start`!
 
 ## Life of a Packet
 
-[How does the Outline Client work?](docs/life_of_a_packet.md)
+[How does the Super Net Client work?](docs/life_of_a_packet.md)
 
 ## Accepting a server invite
 

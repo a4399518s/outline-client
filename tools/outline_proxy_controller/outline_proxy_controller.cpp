@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -180,7 +180,7 @@ OutlineProxyController::OutlineProxyController() {
   setTunDeviceIP();
 
   // we try to detect the best interface as early as possible before
-  // outline mess up with the routing table. But if we fail, we try
+  // Super Net mess up with the routing table. But if we fail, we try
   // again when the connect request comes in
   try {
     detectBestInterfaceIndex();
@@ -200,11 +200,11 @@ void OutlineProxyController::addOutlineTunDev() {
 
     if (!outlineTunDeviceExsits()) {
       logger.error(tunDeviceAdditionResult.first);
-      throw runtime_error("failed to add outline tun network interface");
+      throw runtime_error("failed to add Super Net tun network interface");
     }
   } else {
     logger.warn("tune device " + tunInterfaceName +
-                " already exists. is another instance of outline controller is running?");
+                " already exists. is another instance of Super Net controller is running?");
   }
 
   // set the device up
@@ -216,7 +216,7 @@ void OutlineProxyController::addOutlineTunDev() {
   // if we fail to set bring up the device that's an unrecoverable
   if (!isSuccessful(tunDeviceAdditionResult)) {
     logger.error(tunDeviceAdditionResult.first);
-    throw runtime_error("unable to bring up outline tun interface");
+    throw runtime_error("unable to bring up Super Net tun interface");
   }
 }
 
@@ -256,19 +256,19 @@ void OutlineProxyController::setTunDeviceIP() {
 
   if (!isSuccessful(gatewayRouteResult)) {
     logger.error(gatewayRouteResult.first);
-    throw runtime_error("failed to add outline gateway routing entry");
+    throw runtime_error("failed to add Super Net gateway routing entry");
   }
-  logger.info("successfully added outline gateway routing entry");
+  logger.info("successfully added Super Net gateway routing entry");
 }
 
 void OutlineProxyController::detectBestInterfaceIndex() {
-  // our best guess is the route that outline server already can be reached
-  // it is the default gateway if outline is connected or not
+  // our best guess is the route that Super Net server already can be reached
+  // it is the default gateway if Super Net is connected or not
   auto result = executeIPRoute({ "get", outlineServerIP });
 
   if (!isSuccessful(result)) {
     logger.error(result.first);
-    throw runtime_error("unable to query the default route to the outline proxy");
+    throw runtime_error("unable to query the default route to the Super Net proxy");
   }
 
   std::string routingData = result.first;
@@ -299,8 +299,8 @@ bool OutlineProxyController::IsOutlineRoutingPolluted() noexcept {
     }
 
     // A valid Outline'd `ip route` output must contains:
-    //   - One and only one default gateway through Outline `default via 10.0.85.2 dev outline-tun0`
-    //   - At least one non-Outline routing entry like `192.168.1.0/24 dev ens33 ...` (otherwise it
+    //   - One and only one default gateway through Super Net `default via 10.0.85.2 dev outline-tun0`
+    //   - At least one non-Super Net routing entry like `192.168.1.0/24 dev ens33 ...` (otherwise it
     //     means the NIC might be turned off, and we need to enter "reconnecting" state)
     bool has_outline_default_entry = false;
     bool has_non_outline_device = false;
@@ -312,7 +312,7 @@ bool OutlineProxyController::IsOutlineRoutingPolluted() noexcept {
         if (entry_match[1].str() == tunInterfaceRouterIp && entry_match[2].str() == tunInterfaceName) {
           has_outline_default_entry = true;
         } else {
-          logger.info("[routing polluted] extra non-Outline default gateway: " + routing_entry);
+          logger.info("[routing polluted] extra non-Super Net default gateway: " + routing_entry);
           return true;
         }
       } else if (std::regex_match(routing_entry, entry_match, kRoutingEntryPattern)) {
@@ -324,7 +324,7 @@ bool OutlineProxyController::IsOutlineRoutingPolluted() noexcept {
 
     if (!has_outline_default_entry || !has_non_outline_device) {
       logger.info(std::string{"[routing polluted]"}
-        + (!has_outline_default_entry ? " no Outline default gateway;" : "")
+        + (!has_outline_default_entry ? " no Super Net default gateway;" : "")
         + (!has_non_outline_device ? " no outgoing network interface;" : ""));
       return true;
     }
@@ -353,14 +353,14 @@ void OutlineProxyController::routeThroughOutline(std::string outlineServerIP) {
   if (outlineServerIP.empty()) {
     throw std::system_error{
       ErrorCode::kInvalidServerConfiguration,
-      "Outline Server IP address cannot be empty"};
+      "Super Net Server IP address cannot be empty"};
   }
 
-  logger.info("attempting to route through outline server " + outlineServerIP);
+  logger.info("attempting to route through Super Net server " + outlineServerIP);
 
   // TODO: make sure the routing rule isn't already in the table
   if (routing_status_ != OutlineConnectionStatus::kRoutingThroughDefaultGateway) {
-    logger.warn("it seems that we are already routing through outline server");
+    logger.warn("it seems that we are already routing through Super Net server");
   }
   routing_status_ = OutlineConnectionStatus::kConfiguringRouting;
 
@@ -374,8 +374,8 @@ void OutlineProxyController::routeThroughOutline(std::string outlineServerIP) {
     createRouteforOutlineServer();
   } catch (exception& e) {
     // we can not continue
-    logger.error("failed to create a priority route to outline proxy: " + string(e.what()));
-    // We failed to make a route through outline proxy. We just remove the flag
+    logger.error("failed to create a priority route to Super Net proxy: " + string(e.what()));
+    // We failed to make a route through Super Net proxy. We just remove the flag
     // indicating DNS is backed up.
     resetFailRoutingAttempt(OUTLINE_PRIORITY_SET_UP);
     throw std::system_error{ErrorCode::kConfigureSystemProxyFailure};
@@ -393,7 +393,7 @@ void OutlineProxyController::routeThroughOutline(std::string outlineServerIP) {
   try {
     createDefaultRouteThroughTun();
   } catch (exception& e) {
-    logger.error("failed to route network traffic through outline tun interfacet: ", e.what());
+    logger.error("failed to route network traffic through Super Net tun interfacet: ", e.what());
     resetFailRoutingAttempt(TRAFFIC_ROUTED_THROUGH_TUN);
     throw std::system_error{ErrorCode::kConfigureSystemProxyFailure};
   }
@@ -412,16 +412,16 @@ void OutlineProxyController::routeThroughOutline(std::string outlineServerIP) {
     enforceGloballyReachableDNS();
 
   } catch (exception& e) {
-    // this might not break routing through outline if the DNS is in the same
+    // this might not break routing through Super Net if the DNS is in the same
     // internal network or is a globally reachable. Notheless the user is
     // vulnerable to DNS poisening so we are going to reverse everthing
-    logger.error("failed to enforce outline DNS server: ", e.what());
+    logger.error("failed to enforce Super Net DNS server: ", e.what());
     resetFailRoutingAttempt(OUTLINE_DNS_SET);
     throw std::system_error{ErrorCode::kConfigureSystemProxyFailure};
   }
 
   routing_status_ = OutlineConnectionStatus::kRoutingThroughOutline;
-  logger.info("successfully routing through the outline server");
+  logger.info("successfully routing through the Super Net server");
 }
 
 void OutlineProxyController::backupDNSSetting() {
@@ -509,13 +509,13 @@ void OutlineProxyController::createDefaultRouteThroughTun() {
 }
 
 void OutlineProxyController::createRouteforOutlineServer() {
-  // make sure we have IP for the outline server
-  if (outlineServerIP.empty()) throw runtime_error("no outline server is specified");
+  // make sure we have IP for the Super Net server
+  if (outlineServerIP.empty()) throw runtime_error("no Super Net server is specified");
 
   // make sure we have the default Gateway IP
   if (routingGatewayIP.empty()) {
     logger.warn("default routing gateway is unknown");
-    // because creating the priority route for outline proxy is the first
+    // because creating the priority route for Super Net proxy is the first
     // step in routing through outline, we can still hope by query the routing
     // table we get the default gateway IP.
     detectBestInterfaceIndex();
@@ -528,7 +528,7 @@ void OutlineProxyController::createRouteforOutlineServer() {
   });
   if (!isSuccessful(result)) {
     logger.error(result.first);
-    throw runtime_error("failed to create route for outline proxy");
+    throw runtime_error("failed to create route for Super Net proxy");
   }
 }
 
@@ -559,7 +559,7 @@ void OutlineProxyController::enforceGloballyReachableDNS() {
   try {
     std::ofstream resolveConfFile("/etc/resolv.conf");
 
-    resolveConfFile << "# Generated by outline \n";
+    resolveConfFile << "# Generated by Super Net \n";
     resolveConfFile << "nameserver " + outlineDNSServer + "\n";
 
     // doing dns over tcp instead
@@ -570,7 +570,7 @@ void OutlineProxyController::enforceGloballyReachableDNS() {
   } catch (exception& e) {
     // if we are unable to open resolve conf
     logger.error(e.what());
-    throw runtime_error("unable to apply outline dns configuration");
+    throw runtime_error("unable to apply Super Net dns configuration");
   }
 
   try {
@@ -620,16 +620,16 @@ OutputAndStatus OutlineProxyController::executeSysctl(const CommandArguments &ar
 }
 
 void OutlineProxyController::routeDirectly() {
-  logger.info("attempting to dismantle routing through outline server");
+  logger.info("attempting to dismantle routing through Super Net server");
   if (routing_status_ == OutlineConnectionStatus::kRoutingThroughDefaultGateway) {
-    logger.warn("it does not seem that we are routing through outline server");
+    logger.warn("it does not seem that we are routing through Super Net server");
   }
   routing_status_ = OutlineConnectionStatus::kConfiguringRouting;
 
   try {
     deleteAllDefaultRoutes();
   } catch (const exception& e) {
-    logger.error("failed to delete the route through outline proxy " + string(e.what()));
+    logger.error("failed to delete the route through Super Net proxy " + string(e.what()));
     // this might be because our route got deleted, we are going to add the
     // original default route nonetheless
   }
@@ -650,7 +650,7 @@ void OutlineProxyController::routeDirectly() {
   try {
     deleteOutlineServerRouting();
   } catch (const exception& e) {
-    logger.warn("unable to delete priority route for outline proxy: " + string(e.what()));
+    logger.warn("unable to delete priority route for Super Net proxy: " + string(e.what()));
   }
 
   try {
@@ -686,10 +686,10 @@ void OutlineProxyController::deleteOutlineServerRouting() {
     auto result = executeIPRoute({ "del", outlineServerIP });
     if (!isSuccessful(result)) {
       logger.error(result.first);
-      throw runtime_error("failed to delete outline server direct routing entry.");
+      throw runtime_error("failed to delete Super Net server direct routing entry.");
     }
   } else {
-    logger.warn("no specific routing entry for outline server to be deleted.");
+    logger.warn("no specific routing entry for Super Net server to be deleted.");
   }
 }
 
@@ -698,7 +698,7 @@ void OutlineProxyController::restoreDNSSetting() {
   // backup
   if (DNSSettingBackedup) {
     // if we fail to restore, worst case is that
-    // user continues using outline dns
+    // user continues using Super Net dns
     try {
       std::ofstream resolveConfFile("/etc/resolv.conf");
       resolveConfFile << backedupResolveConf.rdbuf();
@@ -737,7 +737,7 @@ void OutlineProxyController::deleteOutlineTunDev() {
         "mode", "tun"
       });
     } catch (exception& e) {
-      logger.warn("failed to delete outline tun interface: " + string(e.what()));
+      logger.warn("failed to delete Super Net tun interface: " + string(e.what()));
     }
   }
 }

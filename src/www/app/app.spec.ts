@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ describe('unwrapInvite', () => {
 
 describe('isOutlineAccessKey', () => {
   it('ignores empty string', () => expect(isOutlineAccessKey('')).toBe(false));
-  it('ignores garbage', () => expect(isOutlineAccessKey('i am not a outline service location')).toBe(false));
+  it('ignores garbage', () => expect(isOutlineAccessKey('i am not a Super Net service location')).toBe(false));
   it('ignores random https links', () => expect(isOutlineAccessKey('https://example.com')).toBe(false));
 
   it('detects static keys', () => expect(isOutlineAccessKey('ss://myhost.com:3333')).toBe(true));

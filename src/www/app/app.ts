@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -62,7 +62,7 @@ export function unwrapInvite(possiblyInviteUrl: string): string {
   return possiblyInviteUrl;
 }
 
-// Returns true if the given url was a valid Outline invitation or
+// Returns true if the given url was a valid Super Net invitation or
 // access key
 export function isOutlineAccessKey(url: string): boolean {
   if (!url) return false;
@@ -420,7 +420,7 @@ export class App {
       this.rootEl.showToast(this.localize('outline-services-installed'));
     } catch (e) {
       const err = e.errorCode ? errors.fromErrorCode(e.errorCode) : e;
-      console.error('failed to set up Outline VPN', err);
+      console.error('failed to set up Super Net VPN', err);
       if (err instanceof errors.UnexpectedPluginError) {
         this.rootEl.showToast(this.localize('outline-services-installation-failed'));
       } else {
@@ -644,7 +644,7 @@ export class App {
         // This check is necessary to ignore empty and malformed install-referrer URLs in Android
         // while allowing ss://, ssconf:// and invite URLs.
         // TODO: Stop receiving install referrer intents so we can remove this.
-        return console.debug(`Ignoring intercepted non-Outline url`);
+        return console.debug(`Ignoring intercepted non-Super Net url`);
       }
 
       try {

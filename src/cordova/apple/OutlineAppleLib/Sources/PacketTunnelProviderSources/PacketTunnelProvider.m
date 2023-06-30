@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -93,7 +93,7 @@ static NSDictionary *kVpnSubnetCandidates;  // Subnets to bind the VPN.
     DDLogWarn(@"Received a connect request from preferences");
     NSString *msg = NSLocalizedStringWithDefaultValue(
         @"vpn-connect", @"Outline", [NSBundle mainBundle],
-        @"Please use the Outline app to connect.",
+        @"Please use the Super Net app to connect.",
         @"Message shown in a system dialog when the user attempts to connect from settings");
     [self displayMessage:msg
         completionHandler:^(BOOL success) {
@@ -128,7 +128,7 @@ static NSDictionary *kVpnSubnetCandidates;  // Subnets to bind the VPN.
   // valid, the connectivity checks will fail. The system will keep calling this method due to
   // On Demand being enabled (the VPN process does not have permission to change it), rendering the
   // network unusable with no indication to the user. By bypassing the checks, the network would
-  // still be unusable, but at least the user will have a visual indication that Outline is the
+  // still be unusable, but at least the user will have a visual indication that Super Net is the
   // culprit and can explicitly disconnect.
   long errorCode = noError;
   if (!isOnDemand) {

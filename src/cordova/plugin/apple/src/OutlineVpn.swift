@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -118,7 +118,7 @@ class OutlineVpn: NSObject {
   // Determines whether a server is reachable via TCP.
   func isServerReachable(host: String, port: UInt16, _ completion: @escaping Callback) {
     if isVpnConnected() {
-      // All the device's traffic, including the Outline app, go through the VpnExtension process.
+      // All the device's traffic, including the Super Net app, go through the VpnExtension process.
       // Performing a reachability test, opening a TCP socket to a host/port, will succeed
       // unconditionally as the request will not leave the device. Send a message to the
       // VpnExtension process to perform the reachability test.
@@ -203,7 +203,7 @@ class OutlineVpn: NSObject {
     }
   }
 
-  // Adds a VPN configuration to the user preferences if no Outline profile is present. Otherwise
+  // Adds a VPN configuration to the user preferences if no Super Net profile is present. Otherwise
   // enables the existing configuration.
   private func setupVpn(completion: @escaping(Error?) -> Void) {
     NETunnelProviderManager.loadAllFromPreferences() { (managers, error) in

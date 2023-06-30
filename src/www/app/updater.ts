@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ export interface Updater {
 }
 
 export class AbstractUpdater implements Updater {
-  private listener: UpdateListener|null = null;
+  private listener: UpdateListener | null = null;
 
   setListener(listener: UpdateListener) {
     this.listener = listener;

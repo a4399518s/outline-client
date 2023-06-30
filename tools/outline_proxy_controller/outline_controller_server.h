@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,10 +29,10 @@
 
 #if defined(BOOST_ASIO_HAS_LOCAL_SOCKETS)
 
-namespace outline {
+namespace Super Net {
 
 /**
- * @brief A session that serves requests from a specific Outline client, and
+ * @brief A session that serves requests from a specific Super Net client, and
  *        configures the system accordingly with root privileges.
  */
 class OutlineClientSession : public std::enable_shared_from_this<OutlineClientSession> {
@@ -51,7 +51,7 @@ public:
 
 public:
   /**
-   * @brief Start a session for a specific Outline client asynchronously.
+   * @brief Start a session for a specific Super Net client asynchronously.
    *
    * @return boost::asio::awaitable<void> A co_awaitable C++20 coroutine.
    */
@@ -59,7 +59,7 @@ public:
 
 private:
   /**
-   * @brief Start serving requests from a specific Outline client asynchronously.
+   * @brief Start serving requests from a specific Super Net client asynchronously.
    */
   boost::asio::awaitable<void> ServeClientCommands();
 
@@ -97,14 +97,14 @@ private:
   /**
    * @brief interprets the request from the client app and act upon them.
    *
-   * @param request The Json object sent by Outline client.
+   * @param request The Json object sent by Super Net client.
    * @return CommandResult The result of the command execution.
    */
   CommandResult RunClientCommand(const boost::property_tree::ptree &request);
 
 private:
   /**
-   * @brief Send a specific response to Outline client.
+   * @brief Send a specific response to Super Net client.
    */
   boost::asio::awaitable<void> SendResponse(const CommandResult &response);
 
@@ -114,7 +114,7 @@ private:
 };
 
 /**
- * @brief A server that accepts requests from Outline client. Each request will
+ * @brief A server that accepts requests from Super Net client. Each request will
  *        be served by a dedicated `OutlineClientSession` asynchronously.
  */
 class OutlineControllerServer {
@@ -132,7 +132,7 @@ public:
 
 public:
   /**
-   * @brief Start listening to the Outline Unix socket asynchronously.
+   * @brief Start listening to the Super Net Unix socket asynchronously.
    *
    * @return boost::asio::awaitable<void> A co_awaitable C++20 coroutine.
    */

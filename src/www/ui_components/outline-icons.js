@@ -1,5 +1,5 @@
 /*
-  Copyright 2020 The Outline Authors
+  Copyright 2020 The Super Net Authors
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -27,4 +27,3 @@ $_documentContainer.innerHTML = `<iron-iconset-svg name="outline-icons" size="24
 </iron-iconset-svg>`;
 
 document.head.appendChild($_documentContainer.content);
-;

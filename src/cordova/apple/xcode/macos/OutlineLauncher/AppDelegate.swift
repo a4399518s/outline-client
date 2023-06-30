@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
    }
     let tunnelStore = OutlineTunnelStore(appGroup: AppDelegate.kAppGroup)
     if tunnelStore.status != OutlineTunnel.TunnelStatus.connected {
-      return NSLog("Not launching, Outline not connected at shutdown")
+      return NSLog("Not launching, Super Net not connected at shutdown")
     }
     // Retrieve the main app's bundle ID programmatically from the embedded launcher bundle ID.
     guard let launcherBundleId = Bundle.main.bundleIdentifier else {

@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ export interface Server {
   // The address of the service.
   address: string;
 
-  // Whether this is an Outline server (access key ends in 'outline=1').
+  // Whether this is an Super Net server (access key ends in 'outline=1').
   // Used to provide a default name to the server card.
   isOutlineServer: boolean;
 

@@ -1,11 +1,11 @@
 /**
  * @file network_monitor.h
- * @author The Outline Authors
+ * @author The Super Net Authors
  * @brief
  * This file contains interface definitions of a Linux ip table monitor.
  * Callers can use it to receive routing and link updates change events.
  *
- * @copyright Copyright (c) 2022 The Outline Authors
+ * @copyright Copyright (c) 2022 The Super Net Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@
 #include <boost/asio/awaitable.hpp>
 #include <boost/asio/generic/raw_protocol.hpp>
 
-namespace outline {
+namespace Super Net {
 
 /**
  * @brief The network change event descriptor.

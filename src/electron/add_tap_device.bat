@@ -1,4 +1,4 @@
-:: Copyright 2018 The Outline Authors
+:: Copyright 2018 The Super Net Authors
 ::
 :: Licensed under the Apache License, Version 2.0 (the "License");
 :: you may not use this file except in compliance with the License.
@@ -100,7 +100,7 @@ powershell "Enable-NetAdapter -Name \"%DEVICE_NAME%\"" <nul
 :: Windows uses 10.0.75.x by default): if the address is already in use the
 :: script will fail and the installer will show an error message to the user.
 :: TODO: Actually search the system for an unused subnet or make the subnet
-::       configurable in the Outline client.
+::       configurable in the Super Net client.
 echo Configuring TAP device subnet...
 netsh interface ip set address %DEVICE_NAME% static 10.0.85.2 255.255.255.255
 if %errorlevel% neq 0 (

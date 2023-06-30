@@ -1,5 +1,5 @@
 /*
-  Copyright 2020 The Outline Authors
+  Copyright 2020 The Super Net Authors
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -114,6 +114,13 @@ Polymer({
     <div id="container">
       <div id="header">
         <img id="privacy-lock" src$="[[rootPath]]assets/privacy-lock.png" />
+      </div>
+      <div>
+        <table>
+          <t
+        </table>
+        <input type="text" id="account" />
+        <input type="password" id="password" />
       </div>
       <div id="footer-container">
         <div id="footer">

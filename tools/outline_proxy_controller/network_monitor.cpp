@@ -1,10 +1,10 @@
 /**
  * @file network_monitor.cpp
- * @author The Outline Authors
+ * @author The Super Net Authors
  * @brief
  * This file contains the implementation code of network_monitor.h.
  *
- * @copyright Copyright (c) 2022 The Outline Authors
+ * @copyright Copyright (c) 2022 The Super Net Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

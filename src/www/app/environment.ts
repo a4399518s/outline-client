@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 export interface EnvironmentVariables {
   APP_VERSION: string;
   APP_BUILD_NUMBER: string;
-  SENTRY_DSN: string|undefined;
+  SENTRY_DSN: string | undefined;
 }
 
 // According to http://caniuse.com/#feat=fetch fetch didn't land iOS Safari

@@ -1,5 +1,5 @@
 /*
-  Copyright 2020 The Outline Authors
+  Copyright 2020 The Super Net Authors
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -90,14 +90,16 @@ Polymer({
         <div id="title" class="highlight">[[localize(titleLocalizationKey)]]</div>
         <div id="detail">[[localize(detailLocalizationKey)]]</div>
         <div id="buttons">
-          <a hidden\$="[[_shouldHideLink()]]" href\$="[[linkUrl]]">
+          <a hidden$="[[_shouldHideLink()]]" href$="[[linkUrl]]">
             <paper-button>[[localize(linkTextLocalizationKey)]]</paper-button>
           </a>
-          <paper-button class="highlight" on-tap="_dismiss">[[localize(dismissButtonTextLocalizationKey)]]</paper-button>
+          <paper-button class="highlight" on-tap="_dismiss"
+            >[[localize(dismissButtonTextLocalizationKey)]]</paper-button
+          >
         </div>
       </div>
     </div>
-`,
+  `,
 
   is: 'user-comms-dialog',
 
@@ -147,5 +149,5 @@ Polymer({
 
   _shouldHideLink: function() {
     return !this.linkUrl;
-  }
+  },
 });

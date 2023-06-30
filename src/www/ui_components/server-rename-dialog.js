@@ -1,5 +1,5 @@
 /*
-  Copyright 2020 The Outline Authors
+  Copyright 2020 The Super Net Authors
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ Polymer({
         <paper-button dialog-confirm="" on-tap="_saveRename">[[localize('save')]]</paper-button>
       </div>
     </paper-dialog>
-`,
+  `,
 
   is: 'server-rename-dialog',
 
@@ -68,5 +68,5 @@ Polymer({
     if (newName !== this.__serverName) {
       this.fire('RenameRequested', {serverId: this.__serverId, newName: newName});
     }
-  }
+  },
 });

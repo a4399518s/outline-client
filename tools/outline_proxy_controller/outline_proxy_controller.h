@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 
 #include <cstdlib>
 
-namespace outline {
+namespace Super Net {
 
 typedef std::pair<std::string, uint8_t> OutputAndStatus;
 typedef std::vector<std::string> CommandArguments;
@@ -74,7 +74,7 @@ public:
 
 private:
   // this enum is representing different stage of outing and "de"routing
-  // through outline proxy server. And is used for exmaple in undoing
+  // through Super Net proxy server. And is used for exmaple in undoing
   // different steps in case the routing process fails
   enum OutlineConnectionStage {
     DNS_BACKED_UP,
@@ -98,15 +98,15 @@ private:
   inline bool isSuccessful(OutputAndStatus& result) { return (result.second == EXIT_SUCCESS); }
 
   /**
-   * adds outline tun interface in case it is missing.
+   * adds Super Net tun interface in case it is missing.
    * while Windows client creates the TAP device at installation time.
-   * Linux Outline service tries to create the tun device at start of
+   * Linux Super Net service tries to create the tun device at start of
    * each run.
    */
   void addOutlineTunDev();
 
   /**
-   * check if outline tun device exists
+   * check if Super Net tun device exists
    */
   bool outlineTunDeviceExsits();
 
@@ -127,13 +127,13 @@ private:
   void restoreDNSSetting();
 
   /**
-   * set outline DNS setting
+   * set Super Net DNS setting
    */
   void enforceGloballyReachableDNS();
 
   /**
    * reset routing setting to original setting in case we fail to
-   * accomplish routing through outline in the intermediary stage
+   * accomplish routing through Super Net in the intermediary stage
    *
    */
   void resetFailRoutingAttempt(OutlineConnectionStage failedStage);

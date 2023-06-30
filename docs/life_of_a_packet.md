@@ -6,11 +6,11 @@ flowchart LR
   subgraph Operating System
     S <--> R(Routing Table)
   end
-  R <-- Outline OFF --> IF(Network Interface)
+  R <-- Super Net OFF --> IF(Network Interface)
   IF <--> INET(((Internet)))
-  R <-- Outline ON --> TUN(Tun Device)
+  R <-- Super Net ON --> TUN(Tun Device)
   TUN <--> T2S(Tun2sockets)
-  subgraph Outline Client
+  subgraph Super Net Client
     T2S <--> SC(Shadowsocks Client)
   end
   SC <--> IF

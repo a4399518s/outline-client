@@ -1,4 +1,4 @@
-// Copyright 2018 The Outline Authors
+// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@ import CocoaLumberjack
 import CocoaLumberjackSwift
 import Tun2socks
 
-// Class to perform connectivity tests against remote Outline servers.
+// Class to perform connectivity tests against remote Super Net servers.
 class OutlineConnectivity: NSObject {
 
   // Asynchronously calls |completion| with a boolean representing whether |host| and |port|

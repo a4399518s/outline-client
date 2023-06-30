@@ -1,4 +1,4 @@
-﻿// Copyright 2018 The Outline Authors
+﻿// Copyright 2018 The Super Net Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ using System.Text;
 using Newtonsoft.Json;
 
 /*
- * Windows Service, part of the Outline Windows client, to configure routing.
+ * Windows Service, part of the Super Net Windows client, to configure routing.
  * Modifying the system routes requires admin permissions, so this service must be installed
  * and started as admin.
  *
@@ -356,7 +356,7 @@ namespace OutlineService
         //
         // On top of this foundation, we take some steps to help prevent
         // "leaking" traffic:
-        // - IPv6 traffic is "blocked", as Outline does not currently support
+        // - IPv6 traffic is "blocked", as Super Net does not currently support
         //   servers on IPv6 addresses.
         // - "Smart Multi-Homed Name Resolution" is disabled, as it can cause
         //   the system's "regular" - and potentially filtered - DNS servers to
@@ -370,14 +370,14 @@ namespace OutlineService
         //
         // Lastly, a set of routes is added through the gateway *to non-routable
         // ("LAN") addresses*. This allows common hardware such as Chromecast to
-        // function while Outline is active.
+        // function while Super Net is active.
         //
         // Note:
         //  - Currently, this function does not "clean up" in the event of
         //    failure. Instead, we rely on the client to call ResetRouting
         //    following a connection failure.
         //  - There's limited protection against "nested connections", i.e.
-        //    connecting to Outline while another VPN, e.g. OpenVPN, is already
+        //    connecting to Super Net while another VPN, e.g. OpenVPN, is already
         //    active. There's no simple API we can use to tell whether a VPN is
         //    already active and *given the difficulty in identifying this
         //    reliably* (multiple active network interfaces, for example, are
@@ -469,8 +469,8 @@ namespace OutlineService
         //    connected (or, worse but less likely, bricked).
         //  - If the service does not know the IP address of the proxy server
         //    then it *cannot remove that route*. This can happen if the service
-        //    is restarted while Outline is connected *or* (more likely) if this
-        //    function is called while Outline is not connected. This route is
+        //    is restarted while Super Net is connected *or* (more likely) if this
+        //    function is called while Super Net is not connected. This route is
         //    mostly harmless because it only affects traffic to the proxy and
         //    if/when the user reconnects to it the route will be updated.
         public void ResetRouting(string proxyIp, int gatewayInterfaceIndex)
@@ -704,7 +704,7 @@ namespace OutlineService
             }
         }
 
-        // Outline does not currently support IPv6, so we resort to disabling it while the VPN is active to
+        // Super Net does not currently support IPv6, so we resort to disabling it while the VPN is active to
         // prevent leakage. Removing the default IPv6 gateway is not enough since it gets re-created
         // through router advertisements and DHCP (disabling these or IPv6 routing altogether requires a
         // system reboot). Thus, we resort to creating three IPv6 routes (see IPV6_SUBNETS) to the loopback
@@ -890,7 +890,7 @@ namespace OutlineService
             gatewayInterfaceIndex = bestRow.dwForwardIfIndex;
         }
 
-        // Updates, if Outline is connected, the routing table to reflect a new
+        // Updates, if Super Net is connected, the routing table to reflect a new
         // gateway.
         //
         // There's really just one thing to do when the gateway changes: update
@@ -912,12 +912,12 @@ namespace OutlineService
         //    touch the routing table unless the gateway has actually changed.
         //  - This function may be called while #ConfigureRouting is still
         //    running. This is partly why we exit early (at the top) if we don't
-        //    think Outline is connected.
+        //    think Super Net is connected.
         private void NetworkAddressChanged(object sender, EventArgs evt)
         {
             if (proxyIp == null)
             {
-                eventLog.WriteEntry("network changed but Outline is not connected - doing nothing");
+                eventLog.WriteEntry("network changed but Super Net is not connected - doing nothing");
                 return;
             }
 

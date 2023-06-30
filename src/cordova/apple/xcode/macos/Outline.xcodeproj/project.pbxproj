@@ -199,7 +199,7 @@
 				F69339162968AFFD00823853 /* Packages */,
 				707060B018FFC0D900755D46 /* config.xml */,
 				70DAA8D91908785C00AF3749 /* www */,
-				70BD682C18FFB02D00A1EFCF /* Outline */,
+				70BD682C18FFB02D00A1EFCF /* Super Net */,
 				70BD686818FFB0BF00A1EFCF /* Classes */,
 				7069FBC31905A1F9000B48E1 /* Plugins */,
 				70D86C851B903D11000750E0 /* Resources */,
@@ -243,7 +243,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		70BD682C18FFB02D00A1EFCF /* Outline */ = {
+		70BD682C18FFB02D00A1EFCF /* Super Net */ = {
 			isa = PBXGroup;
 			children = (
 				FCB2DED41F3E3CAD000C6A44 /* VpnExtension.entitlements */,
@@ -320,7 +320,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		70BD682218FFB02D00A1EFCF /* Outline */ = {
+		70BD682218FFB02D00A1EFCF /* Super Net */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70BD685418FFB02D00A1EFCF /* Build configuration list for PBXNativeTarget "Outline" */;
 			buildPhases = (
@@ -472,7 +472,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				70BD682218FFB02D00A1EFCF /* Outline */,
+				70BD682218FFB02D00A1EFCF /* Super Net */,
 				FC5FF92A1F3E1E5F0032A745 /* VpnExtension */,
 				FC0799E52037532900A1C822 /* OutlineLauncher */,
 			);

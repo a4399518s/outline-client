@@ -301,7 +301,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Outline */ = {
+		1D6058900D05DD3D006BFB54 /* Super Net */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Outline" */;
 			buildPhases = (
@@ -402,7 +402,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Outline */,
+				1D6058900D05DD3D006BFB54 /* Super Net */,
 				3B0347471F212F0100C8EF1F /* VpnExtension */,
 			);
 		};
